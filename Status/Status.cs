@@ -3,8 +3,6 @@ using FrooxEngine;
 using HarmonyLib;
 using NeosModLoader;
 using System;
-using System.Linq;
-using System.Reflection;
 
 namespace Status
 {
@@ -12,7 +10,7 @@ namespace Status
     {
         public override string Name => "Status";
         public override string Author => "dfgHiatus";
-        public override string Version => "1.0.0";
+        public override string Version => "1.1.0";
         public override string Link => "https://github.com/dfgHiatus/Status";
 
         internal ModConfiguration config;

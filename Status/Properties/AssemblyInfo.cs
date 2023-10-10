@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Status")]
-[assembly: AssemblyDescription("A mod to set and view user status in NeosVR")]
+[assembly: AssemblyDescription("A mod to set and view user status in Resonite")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Hiatus Labs")]
 [assembly: AssemblyProduct("Status")]

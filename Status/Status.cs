@@ -13,42 +13,41 @@ public class Status : ResoniteMod
     public override string Version => "2.0.0";
     public override string Link => "https://github.com/dfgHiatus/Status";
 
-    internal ModConfiguration config;
+    internal static ModConfiguration Config;
 
     [AutoRegisterConfigKey]
-    internal ModConfigurationKey<string> tagLine = 
+    internal static readonly ModConfigurationKey<string> tagLine = 
         new("tagLine", "Tagline", () => "Tagline");
 
     [AutoRegisterConfigKey]
-    internal ModConfigurationKey<string> description = 
+    internal static readonly ModConfigurationKey<string> description = 
         new("description", "Description", () => "Description");
 
     [AutoRegisterConfigKey]
-    internal ModConfigurationKey<string> profileWorldUri = 
+    internal static readonly ModConfigurationKey<string> profileWorldUri = 
         new("profileWorldUri", "Featured World URL", () => "");
 
     public override void OnEngineInit()
     {
         new Harmony("net.dfgHiatus.Status").PatchAll();
-        config = GetConfiguration();
-        config.OnThisConfigurationChanged += OnConfigChange;
+        Config = GetConfiguration();
+        Config.OnThisConfigurationChanged += OnConfigChange;
     }
 
     private async void OnConfigChange(ConfigurationChangedEvent configurationChangedEvent)
     {
         UserProfile profile = Engine.Current.Cloud.CurrentUser.Profile;
 
-        // Update everything else
         switch (configurationChangedEvent.Key.Name)
         {
             case "tagLine":
-                profile.Tagline = config.GetValue(tagLine);
+                profile.Tagline = Config.GetValue(tagLine);
                 break;
             case "description":
-                profile.Description = config.GetValue(description);
+                profile.Description = Config.GetValue(description);
                 break;
             case "profileWorldUri":
-                profile.IconUrl = config.GetValue(profileWorldUri);
+                profile.IconUrl = Config.GetValue(profileWorldUri);
                 break;
             default:
                 throw new ArgumentOutOfRangeException(configurationChangedEvent.Key.Name);

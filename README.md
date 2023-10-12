@@ -10,6 +10,6 @@ A [ResoniteModLoader](https://github.com/resonite-modding-group/ResoniteModLoade
 1. Install [ResoniteModSettings.dll](https://github.com/badhaloninja/ResoniteModSettings/releases/latest/download/ResoniteModSettings.dll)
 1. Start the game. Search for "Status" inside of ResoniteModSettings, any edits you make to the string variable will set your cloud status.
 
-To view your status, search for `https://api.resonite.com/api/users/U-(Your Name)`. The status will appear under `profile/description`
+To view your status, search for `https://api.resonite.com/users/U-(Your Name)`. The status will appear under `profile/description`
 
-*Note this mod doesn't give you the ability to view other user's statuses - this may be the product of another mod, or a LogiX creation*
+*Note this mod doesn't give you the ability to view other users' statuses - this may be the product of another mod, or a Protoflux creation*
